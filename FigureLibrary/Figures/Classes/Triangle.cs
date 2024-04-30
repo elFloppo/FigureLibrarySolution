@@ -102,7 +102,7 @@ namespace FigureLibrary.Figures
             if (double.IsPositiveInfinity(a + b) || double.IsPositiveInfinity(a + c) || double.IsPositiveInfinity(b + c))
                 throw new ArgumentException("Переполнение типа double");
 
-            if (a + b < c || a + c < b || b + c < a)
+            if (a + b <= c || a + c <= b || b + c <= a)
                 throw new ArgumentException("Сумма двух сторон треугольника должна быть больше третьей стороны");
         }
     }
