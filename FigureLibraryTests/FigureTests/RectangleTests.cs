@@ -23,6 +23,13 @@ namespace FigureLibraryTests.FigureTests
         }
 
         [Fact]
+        public void ZeroSidesTest()
+        {
+            Assert.Throws<ArgumentException>(() => new Rectangle(0, 7));
+            Assert.Throws<ArgumentException>(() => new Rectangle(6, 0));
+        }
+
+        [Fact]
         public void NegativeSidesTest()
         {
             Assert.Throws<ArgumentException>(() => new Rectangle(-6, 7));
@@ -34,7 +41,7 @@ namespace FigureLibraryTests.FigureTests
         {
             var rectangle = new Rectangle(6, 7);
             Assert.Throws<ArgumentException>(() => rectangle.A = -7);
-            Assert.Throws<ArgumentException>(() => rectangle.B = -7);
+            Assert.Throws<ArgumentException>(() => rectangle.B = 0);
         }
     }
 }

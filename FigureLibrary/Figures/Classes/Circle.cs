@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public struct Circle : IFigure
+    public class Circle : IFigure
     {
         public Circle(double radius) 
         {
@@ -11,7 +11,7 @@ namespace FigureLibrary.Figures
             _radius = radius;        
         }
 
-        private double _radius = 0;
+        private double _radius;
         public double Radius 
         { 
             get => _radius;
@@ -51,8 +51,8 @@ namespace FigureLibrary.Figures
 
         private void CheckCircle(double radius)
         {
-            if (radius < 0)
-                throw new ArgumentException("Радиус должен быть больше либо равен нулю");
+            if (radius <= 0)
+                throw new ArgumentException("Радиус должен быть больше нуля");
         }
     }
 }

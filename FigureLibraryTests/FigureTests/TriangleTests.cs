@@ -28,11 +28,19 @@ namespace FigureLibraryTests.FigureTests
         }
 
         [Fact]
-        public void NegativeSideTest()
+        public void ZeroSidesTest()
         {
-            Assert.Throws<ArgumentException>(() => new Triangle(-6, 0, 0));
-            Assert.Throws<ArgumentException>(() => new Triangle(0, -6, 0));
-            Assert.Throws<ArgumentException>(() => new Triangle(0, 0, -6));
+            Assert.Throws<ArgumentException>(() => new Triangle(0, 6, 6));
+            Assert.Throws<ArgumentException>(() => new Triangle(6, 0, 6));
+            Assert.Throws<ArgumentException>(() => new Triangle(6, 6, 0));
+        }
+
+        [Fact]
+        public void NegativeSidesTest()
+        {
+            Assert.Throws<ArgumentException>(() => new Triangle(-6, 6, 6));
+            Assert.Throws<ArgumentException>(() => new Triangle(6, -6, 6));
+            Assert.Throws<ArgumentException>(() => new Triangle(6, 6, -6));
         }
 
         [Fact]
@@ -47,7 +55,7 @@ namespace FigureLibraryTests.FigureTests
             var triangle = new Triangle(3, 4, 5);
             Assert.Throws<ArgumentException>(() => triangle.A = -7);
             Assert.Throws<ArgumentException>(() => triangle.B = 666);
-            Assert.Throws<ArgumentException>(() => triangle.C = -666);
+            Assert.Throws<ArgumentException>(() => triangle.C = 0);
         }
     }
 }

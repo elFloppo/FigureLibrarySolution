@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public struct Rectangle : IFigure
+    public class Rectangle : IFigure
     {
         public Rectangle(double a, double b) 
         {
@@ -12,7 +12,7 @@ namespace FigureLibrary.Figures
             _b = b;            
         }
 
-        private double _a = 0;
+        private double _a;
         public double A 
         { 
             get => _a;
@@ -24,7 +24,7 @@ namespace FigureLibrary.Figures
             }
         }
 
-        private double _b = 0;
+        private double _b;
         public double B
         {
             get => _b;
@@ -64,8 +64,8 @@ namespace FigureLibrary.Figures
 
         private void CheckRectangle(double a, double b)
         {
-            if (a < 0 || b < 0)
-                throw new ArgumentException("Стороны прямоугольника должны быть больше либо равны нулю");
+            if (a <= 0 || b <= 0)
+                throw new ArgumentException("Стороны прямоугольника должны быть больше нуля");
         }
     }
 }

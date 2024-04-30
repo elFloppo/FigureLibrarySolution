@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public struct Triangle : IFigure
+    public class Triangle : IFigure
     {
         public Triangle(double a, double b, double c) 
         {
@@ -13,7 +13,7 @@ namespace FigureLibrary.Figures
             _c = c;          
         }
 
-        private double _a = 0;
+        private double _a;
         public double A 
         { 
             get => _a;
@@ -24,7 +24,7 @@ namespace FigureLibrary.Figures
                 _a = value;
             }
         }
-        private double _b = 0;
+        private double _b;
         public double B
         {
             get => _b;
@@ -36,7 +36,7 @@ namespace FigureLibrary.Figures
             }
         }
 
-        private double _c = 0;
+        private double _c;
         public double C
         {
             get => _c;
@@ -96,8 +96,8 @@ namespace FigureLibrary.Figures
 
         private void CheckTriangle(double a, double b, double c)
         {
-            if (a < 0 || b < 0 || c < 0)
-                throw new ArgumentException("Все стороны треугольника должны быть больше либо равны нулю");
+            if (a <= 0 || b <= 0 || c <= 0)
+                throw new ArgumentException("Все стороны треугольника должны быть больше нуля");
 
             if (double.IsPositiveInfinity(a + b) || double.IsPositiveInfinity(a + c) || double.IsPositiveInfinity(b + c))
                 throw new ArgumentException("Переполнение типа double");

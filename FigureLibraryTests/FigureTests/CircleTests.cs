@@ -23,6 +23,12 @@ namespace FigureLibraryTests.FigureTests
         }
 
         [Fact]
+        public void ZeroRadiusTest()
+        {
+            Assert.Throws<ArgumentException>(() => new Circle(0));
+        }
+
+        [Fact]
         public void NegativeRadiusTest()
         {
             Assert.Throws<ArgumentException>(() => new Circle(-6));
@@ -33,6 +39,7 @@ namespace FigureLibraryTests.FigureTests
         {
             var circle = new Circle(7);
             Assert.Throws<ArgumentException>(() => circle.Radius = -7);
+            Assert.Throws<ArgumentException>(() => circle.Radius = 0);
         }
     }
 }
