@@ -24,10 +24,7 @@ namespace FigureLibraryTests.FigureTests
         [Fact]
         public void MaxDoubleSidesTest()
         {
-            var triangle = new Triangle(double.MaxValue, double.MaxValue, double.MaxValue);
-            Assert.Throws<ArgumentException>(() => triangle.Perimeter);
-            Assert.Throws<ArgumentException>(() => triangle.Area);
-            Assert.Throws<ArgumentException>(() => triangle.IsTriangleRight);
+            Assert.Throws<ArgumentException>(() => new Triangle(double.MaxValue, double.MaxValue, double.MaxValue));
         }
 
         [Fact]
