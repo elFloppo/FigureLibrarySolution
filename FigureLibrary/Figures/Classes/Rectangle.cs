@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public class Rectangle : IFigure
+    public struct Rectangle : IFigure
     {
         public Rectangle(double a, double b) 
         {
@@ -12,7 +12,7 @@ namespace FigureLibrary.Figures
             _b = b;            
         }
 
-        private double _a;
+        private double _a = 0;
         public double A 
         { 
             get => _a;
@@ -24,7 +24,7 @@ namespace FigureLibrary.Figures
             }
         }
 
-        private double _b;
+        private double _b = 0;
         public double B
         {
             get => _b;

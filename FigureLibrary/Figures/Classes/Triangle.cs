@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public class Triangle : IFigure
+    public struct Triangle : IFigure
     {
         public Triangle(double a, double b, double c) 
         {
@@ -13,7 +13,7 @@ namespace FigureLibrary.Figures
             _c = c;          
         }
 
-        private double _a;
+        private double _a = 0;
         public double A 
         { 
             get => _a;
@@ -24,7 +24,7 @@ namespace FigureLibrary.Figures
                 _a = value;
             }
         }
-        private double _b;
+        private double _b = 0;
         public double B
         {
             get => _b;
@@ -36,7 +36,7 @@ namespace FigureLibrary.Figures
             }
         }
 
-        private double _c;
+        private double _c = 0;
         public double C
         {
             get => _c;

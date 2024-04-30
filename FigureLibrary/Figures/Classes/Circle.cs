@@ -2,7 +2,7 @@
 
 namespace FigureLibrary.Figures
 {
-    public class Circle : IFigure
+    public struct Circle : IFigure
     {
         public Circle(double radius) 
         {
@@ -11,7 +11,7 @@ namespace FigureLibrary.Figures
             _radius = radius;        
         }
 
-        private double _radius;
+        private double _radius = 0;
         public double Radius 
         { 
             get => _radius;
